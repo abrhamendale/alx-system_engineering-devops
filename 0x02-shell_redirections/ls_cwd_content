@@ -1,0 +1,26 @@
+total 100
+drwxr-xr-x 2 root root  4096 Jun 27 10:02 .
+drwxr-xr-x 6 root root   160 Jun 26 23:39 ..
+-rwxr--r-- 1 root root    37 Jun 27 00:14 0-hello_world
+-rwxr--r-- 1 root root    31 Jun 27 03:31 1-confused_smiley
+-rwxr--r-- 1 root root    28 Jun 27 03:33 2-hellofile
+-rwxr--r-- 1 root root    39 Jun 27 03:42 3-twofiles
+-rwxr--r-- 1 root root    29 Jun 27 03:48 4-lastlines
+-rwxr--r-- 1 root root    29 Jun 27 03:50 5-firstlines
+-rwxr--r-- 1 root root    37 Jun 27 04:10 6-third_line
+-rwxr--r-- 1 root root    67 Jun 27 09:38 7-file
+-rwxr--r-- 1 root root    81 Jun 27 07:51 7-files
+-rw-r--r-- 1 root root 12288 Jun 27 08:04 .7-files.swp
+-rw-r--r-- 1 root root 12288 Jun 27 09:14 .7-file.swp
+-rwxr--r-- 1 root root    42 Jun 27 09:54 8-cwd_state
+-rw-r--r-- 1 root root    39 Jun 27 05:46 \*\'Best
+-rw-r--r-- 1 root root    12 Jun 27 07:39 \*\"Best School"\'\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root    12 Jun 27 09:12 \*\'"Best School"\'\*$?\*\*\*\*\*:)
+-rw-r--r-- 1 root root    24 Jun 27 07:45 \*\'"Best School"\'\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root    48 Jun 27 08:48 \*\\'"Best School"\'\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root    72 Jun 27 09:38 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root    12 Jun 27 05:59 \*\\'"Best School"\'\\*$\?\*\*\*\*\*\:\)
+-rw-r--r-- 1 root root    12 Jun 27 08:25 \*\\\Best School\\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root     0 Jun 27 04:19 --help
+-rw-r--r-- 1 root root     0 Jun 27 10:02 ls_cwd_content
+-rw-r--r-- 1 root root     0 Jun 27 04:35 School\'\*$\?\*\*\*\*\*:)
