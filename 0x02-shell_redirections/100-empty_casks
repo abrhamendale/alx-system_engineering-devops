@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -Ra -1 | find -type f,d -empty
