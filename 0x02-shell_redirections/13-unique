@@ -1,0 +1,3 @@
+#!/bin/bash
+cat > list 
+cat list | uniq -u | sort 
