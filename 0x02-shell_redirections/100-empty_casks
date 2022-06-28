@@ -1,2 +1,2 @@
 #i/bin/bash
-ls -Ra -1 --format=single-column | find -type f,d -empty |xargs -n 1 basename
+find -type f,d -empty |xargs -n 1 basename
