@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c1 | tr '\n' ' ' | xargs 
+cut -c1 | tr '\n' ' ' | xargs | tr -d ' '  
