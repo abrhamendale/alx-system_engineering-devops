@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -n 'p;n'
+awk '{if(NR%2!=0)print}' 
