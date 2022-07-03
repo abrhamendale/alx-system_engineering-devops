@@ -1,2 +1,2 @@
 #!/bin/bash
-paste -s -d '\t \n ' | cut -f 1 | tr -d ' ' 
+tee temp_files_list | paste -s -d '\t\n' | cut -f 1 
