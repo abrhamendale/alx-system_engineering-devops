@@ -1,2 +1,2 @@
 #!/bin/bash
-awk '{if(NR%2!=0)print}' 
+paste -s -d '\t \n ' | cut -f 1 | tr -d ' ' 
