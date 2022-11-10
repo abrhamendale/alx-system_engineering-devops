@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+num=100
+for i in {1..100};
+do
+	if [ i % 3 !=~ {1..100} ] && [ i % 5 ! in {1..100}]
+	then
+		echo "$i"
+	fi
+	if [ i % 3 =~ {1..100} ]
+	then
+		echo "Fizz"
+	fi
+	if [ i % 5 =~ {1..100} ]
+	then
+		echo "Buzz"
+	fi
+done

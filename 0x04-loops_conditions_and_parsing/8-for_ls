@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Displays the contents of the current directory after "-"
+list="$(ls)"
+for j in "$list";
+do
+	echo "$(cut -d "-" -f2 <<< "$j")"
+done
