@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+file="/etc/passwd"
+while read -r line;
+do
+	echo "$(cut -d ":" -f1 <<< "$line"):$(cut -d ":" -f3 <<< "$line"):$(cut -d ":" -f3 <<< "$line")"
+done <$file

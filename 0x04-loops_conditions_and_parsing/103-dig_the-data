@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+file="apache-access.log"
+#awk '{print $1,$9}' apache-access.log
+awk '{dups[$1 $9]++} END{for (num in dups) {print dups[num],num}}' apache-access.log
