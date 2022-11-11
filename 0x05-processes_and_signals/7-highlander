@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Prints all the process's informations
+while [ 1 ];
+do
+	trap "echo I am invincible!!!" SIGTERM
+	echo "To infinity and beyond"
+	sleep 2
+done

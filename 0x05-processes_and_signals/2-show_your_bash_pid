@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Prints all the process's informations
+ps -u
+# shellcheck disable=SC2009

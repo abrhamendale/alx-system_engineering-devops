@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Prints all the process's informations
+pgrep -l bash
