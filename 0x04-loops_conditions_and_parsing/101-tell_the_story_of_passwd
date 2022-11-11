@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Prints data from passwd file
 file="/etc/passwd"
 IFS=:
 while read -r line;

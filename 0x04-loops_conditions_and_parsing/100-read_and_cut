@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Prints passwd file data
 file="/etc/passwd"
 while read -r line;
 do
