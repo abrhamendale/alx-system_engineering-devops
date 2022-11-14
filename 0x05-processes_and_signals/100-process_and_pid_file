@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Bash Script
+file="myscript.pid"
+touch $file
+echo $$ > $file
+while [ true ];
+do
+	echo "To infinity and beyond"
+	sleep 1
+done
+trap "echo Y U no love me?!" SIGINT
+trap "echo I hate the kill command" SIGTREM
+#trap "rm $file;pkill -f 100-process_and_pid_file > kill -15" SIGTERM
+#trap "rm $file; pkill -f 100-process_and_pid_file > kill -15" SIGQUIT

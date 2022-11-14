@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #Terminates running process:4-to_infinity_and_beyond
-kill -9 $(pgrep bash)
+pkill -f 7-highlander > kill -9
