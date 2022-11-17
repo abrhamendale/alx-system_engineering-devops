@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Prints listening ports with the PID and process name
+netstat -lp
