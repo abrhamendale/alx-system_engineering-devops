@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Prints all IPs on a machine
+hostname -I

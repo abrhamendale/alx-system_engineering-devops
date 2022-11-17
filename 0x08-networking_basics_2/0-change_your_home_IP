@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Changes hosts file entries
+cp /etc/hosts /etc/n_hosts
+localhost	127.0.0.2 > /etc/hosts
+facebook.com	8.8.8.8 > /etc/hosts
+cp /etc/n_hosts /etc/hosts
