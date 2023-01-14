@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Installs nginx
-apt-get -y update
-apt-get -y install nginx
+#apt-get -y update
+#apt-get -y install nginx
+sudo chown ubuntu /var/www/html/index.nginx-debian.html
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sed -i "/server_name _;/ a\\\trewrite ^/redirect_me http://www.holbertonschool.com permanent;" /etc/nginx/sites-available/default
-service nginx start
+sudo service nginx start
