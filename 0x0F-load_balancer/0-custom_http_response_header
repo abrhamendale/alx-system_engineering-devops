@@ -1,6 +1,7 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #Configures a new http header
-sudo ssh -i ~/.ssh/school ubuntu@54.242.195.19 sudo cp /etc/nginx/nginx.conf{,.original}
-sudo ssh -i ~/.ssh/school ubuntu@54.236.50.27 sudo cp /etc/nginx/nginx.conf{,.original}
-sudo ssh -i ~/.ssh/school ubuntu@54.242.195.19 sudo sed '/http {/ a "add_header X-Served-By: 73197-web-01;"' /etc/nginx/nginx.conf
-sudo ssh -i ~/.ssh/school ubuntu@54.236.50.27 sudo sed '/http {/ a "add_header X-Served-By: 73197-web-02;"' /etc/nginx/nginx.conf
+sudo apt-get install nginx
+sudo cp /etc/nginx/nginx.conf{,.original}
+sudo cp /etc/nginx/sites-available/default{,.original}
+sudo sed -I "20i\	add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sudo service nginx restart
