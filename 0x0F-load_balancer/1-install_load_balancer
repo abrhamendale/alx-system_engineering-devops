@@ -3,12 +3,12 @@
 sudo apt-get -y update
 sudo apt-get install -y haproxy
 echo "
-frontend oscar
+frontend ae
 	bind *:80
 	mode http
-	default_backend backendnodes
+	default_backend back_end
 	
-	backend backendnodes
+	backend back_end
 	balance roundrobin
 	server 73197-web-01 54.242.195.19 check
 	server 73197-web-02 54.236.50.27 check " >> /etc/haproxy/haproxy.cfg
