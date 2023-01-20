@@ -2,7 +2,15 @@
 #Configures HAProxy
 sudo apt-get -y update
 sudo apt-get install -y haproxy
-sudo mv /etc/haproxy/haproxy.cfg{,.original}
-sudo sed -i 's|ENABLED=0|ENABLED=1|' /etc/default/haproxy
-sudo echo "\n\nfrontend myfrontend\n\tmode http\n\tbind *:80\n\tdefault_backend web_servers\n\nbackend web_servers\n\tmode http\n\tbalance roundrobin\n\toption httpchk\n\tserver 7319-web-01 54.242.195.19[:80] check\n\tserver 7319-web-02 54.236.50.27[:80] check" >> /etc/haproxy/haproxy.cfg
+echo "
+frontend oscar
+	bind *:80
+	mode http
+	default_backend backendnodes
+	
+	backend backendnodes
+	balance roundrobin
+	server 73197-web-01 54.242.195.19 check
+	server 73197-web-02 54.236.50.27 check " >> /etc/haproxy/haproxy.cfg
+
 sudo service haproxy restart
