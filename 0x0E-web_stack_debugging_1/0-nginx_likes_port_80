@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Debugs servers port 80 problem
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo sed -i 's/8080/80/' /etc/nginx/sites-available/default
+sudo service nginx start
