@@ -34,22 +34,13 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 frontend http_front
+        mode http
         bind *:80
-        reqadd X-Forwarded-Proto:\ http
-        default_backend back_end
-
-frontend https_front
-        bind *:443 ssl crt /etc/letsencrypt/live/www.ae23.tech/fullchain.pem
-        reqadd X-Forwarded-Proto:\ https
-        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-        use_backend letsencrypt-backend if letsencrypt-acl
+        bind *:443 ssl crt /etc/letsencrypt/live/www.ae23.tech/www.ae23.tech.pem
+        http-request redirect scheme https unless { ssl_fc }
         default_backend back_end
 
 backend back_end
-        redirect scheme https if !{ ssl_fc }
         balance roundrobin
-        server 73197-web-01 54.242.195.19:80 check
-        server 73197-web-02 54.236.50.27:80 check
-
-backend letsencrypt-backend
-        server letsencrypt 127.0.0.1:54321       
+        server 73197-web-01 54.242.195.19:80 check check maxconn 20 ssl
+        server 73197-web-02 54.236.50.27:80 check check maxconn 20 ssl
