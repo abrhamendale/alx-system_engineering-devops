@@ -1,6 +1,5 @@
-sudo ufw disable
 sudo ufw default deny incoming
 sudo ufw allow ssh
-sudo ufw allow openSSH
 sudo ufw allow http
+sudo ufw allow https
 sudo ufw enable
