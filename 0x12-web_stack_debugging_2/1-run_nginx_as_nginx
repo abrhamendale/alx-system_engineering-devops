@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 #Initializes the user nginx
-sudo useradd -s /bin/false nginx_test
-sed -i /a/user www-data//nginx
-sudo service nginx restart
+pkill "apache2"
+sudo sed -i '1i user nginx;' /etc/nginx/nginx.conf
+sudo sed -i 's/\<80\>/&80/' /etc/nginx/sites-available/default
+sudo chmod 644 /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
