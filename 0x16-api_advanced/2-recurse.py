@@ -12,13 +12,12 @@ def recurse(subreddit, hot_list=[]):
                'allow_redirects': 'False'}
     u = "https://www.reddit.com/r/" + subreddit + "/hot.json?&t=all"
     hl = []
-    try:
-        req = requests.get(u, headers=headers, allow_redirects=False)
-        t = req.json()['data']['children']
-        hl = recurse2(t, hl)
-        return (hl)
-    except KeyError:
+    req = requests.get(u, headers=headers, allow_redirects=False)
+    if req.status_code == 404:
         return (None)
+    t = req.json()['data']['children']
+    hl = recurse2(t, hl)
+    return (hl)
 
 
 def recurse2(t, hl):

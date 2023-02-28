@@ -12,14 +12,12 @@ def recurse(subreddit, hot_list=[]):
                'allow_redirects': 'False'}
     u = "https://www.reddit.com/r/" + subreddit + "/hot.json?&t=all"
     hl = []
-    try:
-        req = requests.get(u, headers=headers)
-        t = req.json()['data']['children']
-        print(t)
-        hl = recurse2(t, hl)
-        return (hl)
-    except KeyError:
+    req = requests.get(u, headers=headers)
+    if req.status_code == 404:
         return (None)
+    t = req.json()['data']['children']
+    hl = recurse2(t, hl)
+    return (hl)
 
 
 def recurse2(t, hl):
@@ -39,14 +37,17 @@ def count_words(subreddit, word_list):
     tw = []
     k = 0
     c = 0
+    pr = 0
     for i in t:
         tw.append(i.split())
     for i in word_list:
         for j in tw:
             if i in j:
                 c = c + 1
+                pr = 1
         count.append(c)
         c = 0
         k = k + 1
     for i in range(len(count)):
-        print("{}: {}".format(word_list[i], count[i]))
+        if pr == 1 and t is not None:
+            print("{}: {}".format(word_list[i], count[i]))
