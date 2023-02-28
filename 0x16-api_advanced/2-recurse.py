@@ -17,7 +17,7 @@ def recurse(subreddit, hot_list=[]):
         hl = recurse2(t, hl)
         return (hl)
     except KeyError:
-        return (0)
+        return (None)
 
 
 def recurse2(t, hl):
