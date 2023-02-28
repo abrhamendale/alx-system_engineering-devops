@@ -14,6 +14,7 @@ def recurse(subreddit, hot_list=[]):
     try:
         req = requests.get(u, headers=headers, allow_redirects=False)
         t = req.json()['data']['children']
+        print(t[0])
         hl = recurse2(t, hl)
         return (hl)
     except KeyError:
