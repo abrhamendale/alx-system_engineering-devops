@@ -8,13 +8,12 @@ import json
 
 def recurse(subreddit, hot_list=[]):
     """Retrieves all the hot articles."""
-    headers = {'User-Agent': 'Chrome/110.0.5481.105'}
+    headers = {'User-Agent': 'Chrome/110.0.5481.105', 'allow_redirects': 'False'}
     u = "https://www.reddit.com/r/" + subreddit + "/hot.json?&t=all"
     hl = []
     try:
         req = requests.get(u, headers=headers, allow_redirects=False)
         t = req.json()['data']['children']
-        print(t[0])
         hl = recurse2(t, hl)
         return (hl)
     except KeyError:
