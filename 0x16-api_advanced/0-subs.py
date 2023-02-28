@@ -12,8 +12,8 @@ def number_of_subscribers(subreddit):
     data = {'grant_type': 'password',
             'username': '<USERNAME>',
             'password': '<PASSWORD>'}"""
-    headers = {'User-Agent': 'Chrome/110.0.5481.105', '
-               allow_redirects': 'False'}
+    headers = {'User-Agent': 'Chrome/110.0.5481.105',
+               'allow_redirects': 'False'}
     """
     res = requests.post('https://www.reddit.com/api/v1/access_token',
                                 auth=auth, data=data, headers=headers)
